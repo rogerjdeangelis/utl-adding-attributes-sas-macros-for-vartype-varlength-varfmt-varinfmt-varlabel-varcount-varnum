@@ -5,6 +5,8 @@ Adding sas macros for vartype varlength varfmt varinfmt varlabel varcount varnum
     %stop_submission;
 
     Adding sas macros for vartype varlength varfmt varinfmt varlabel varcount varnum
+    
+    correction removed comma in utl_varcount macro rjd 2015-08-19
 
     github
     https://tinyurl.com/3axaxt8s
@@ -198,7 +200,7 @@ Adding sas macros for vartype varlength varfmt varinfmt varlabel varcount varnum
     %macro utl_varcount(dsn)/des="Number of variables";
       %local dsid posv rc;
         %let dsid = %sysfunc(open(&dsn,i));
-        %sysfunc(attrn(&dsid,NVARS));
+        %sysfunc(attrn(&dsid,NVARS))
         %let rc = %sysfunc(close(&dsid));
     %mend utl_varcount;
     ;;;;
